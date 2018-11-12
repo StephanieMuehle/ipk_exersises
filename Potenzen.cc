@@ -1,9 +1,11 @@
 #include <iostream>
 #include <cmath>
 
-int iterative(int q, int n)
+namespace power {
+
+double iterative(double q, int n)
 {
-	int e = 1;
+	double e = 1;
 	if (n%2 == 0)
 	{
 		for(int i = 0; i < (n/2); ++i)
@@ -22,6 +24,7 @@ int iterative(int q, int n)
 	return e;
 }
 
+} //Schließe namespace
 /*
 int recursive(int q, int n)
 {
@@ -40,7 +43,7 @@ int main()
 	std::cout << "Gib eine positive ganze Zahl (die Potenz) ein " << std::flush;
 	std::cin >> n;
 	if (q > 0 && n > 0)
-	{std::cout << q << " hoch " << n << " ist gleich " << iterative(q, n) << std::endl;
+	{std::cout << q << " hoch " << n << " ist gleich " << power::iterative(q, n) << std::endl;
 	}
 	else
 	{ std::cout << "Ungültige Eingabe" << std::endl;
